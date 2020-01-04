@@ -1,7 +1,7 @@
 const express = require('express');
 const bp = require('body-parser');
 const request = require('request');
-const port = 3000;
+var port = 3000;
 const app = express();
 
 app.use(express.static('public'));
@@ -54,7 +54,7 @@ app.post('/', function(req, res) {
     });
 });
 
-app.listen(port, function() {
+app.listen(process.env.PORT || port, function() {
     console.log('Server is running on port ' + port);
 });
 
